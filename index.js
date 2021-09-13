@@ -22,51 +22,40 @@ const pizza = pizza_app()
 let counter = 0;
 
 app.get('/', function(req, res) {
-	const totalS= pizza.getSmall()
+	const totalS = pizza.getSmall()
+	const totalM = pizza.getMedium()
+	const totalL = pizza.getLarge()
 	const grandT = pizza.grandTotal()
 
 	res.render('index', {
-		totalS,grandT
+		totalS,
+		totalM,
+		totalL,
+		grandT
 	});
 });
 
 app.post('/small', function(req, res) {
-
-	// var qty = ++counter;
-	// var cost = 31.99 * qty;														
-	// var orderS = req.body.small
-	// const pizzaS = pizza.addS({
-	// 	pizzaStemp:orderS
-	// })
-	// console.log(pizzaS)
 	var small = req.body.small
-	console.log(small+ "hello")
 	 pizza.addS(small)
     
-	res.redirect('/')
-	
-	
+	res.redirect('/')	
 });
 
 app.post('/medium', function(req, res) {
 	var medium = req.body.medium
-	const pizzaM = pizza.addM({
-		pizza_medium: medium
-	})
-	
-	
+	pizza.addM(medium)
+		
+	res.redirect('/')
 });
 
 app.post('/large', function(req, res) {
 	var large = req.body.large
-	const pizzaL = pizza.addL({
-		pizza_large: large
-	})
+	pizza.addL(large)
+	res.redirect('/')
 
 });
-// app.get('/small', function(req, res) {
-// 	const 
-// });
+
 
 // start  the server and start listening for HTTP request on the PORT number specified...
 app.listen(PORT, function() {
