@@ -21,7 +21,7 @@
       {{!-- <strong>Small pizzas quantity:</strong>
       <span class="smallTotalPrice"> {{qty}}</span> --}}
       <strong>Small pizzas total:</strong>
-      <span class="smallTotalPrice"> {{pizzaS}}</span>
+      <span class="smallTotalPrice"> {{totalS}}</span>
 
       <br>
       <strong>Medium pizzas total:</strong>
@@ -32,7 +32,7 @@
       <span class="largeTotalPrice">0.00</span>
       <br>
       <strong>Total price</strong>
-      <span class="totalPrice">0.00</span>
+      <span class="totalPrice">{{grandT}}</span>
     </div>
 
     <div class="pizzas">
@@ -45,7 +45,7 @@
 
           </div>
           <div class="orderBox">
-            <button class="btn orderSmallPizza" name="small" type="submit" style="margin-left: auto">Order small
+            <button class="btn orderSmallPizza" value="small" name="small" type="submit" style="margin-left: auto">Order small
               pizza</button>
           </div>
         </div>

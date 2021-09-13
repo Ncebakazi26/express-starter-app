@@ -7,11 +7,12 @@ const pizzaL=0
 var totalS =0
 var totalM =0
 var totalL =0
-var grandTotal = 0
+var overallTotal = 0
 
 function addS(pizza_small){
 if(pizza_small==='small'){
     totalS+=31.99
+    overallTotal += 31.99
 }
 
 
@@ -24,6 +25,9 @@ if(pizza_small==='small'){
 function getSmall(){
     return totalS
 }
+function grandTotal(){
+    return  overallTotal
+}
 function addM(){
     if(pizza_medium === 'medium'){
         totalM+= 76.99
@@ -31,12 +35,13 @@ function addM(){
 
 }
 function addL (pizza_sizeL){
-    if(pizza_sizeL === pizzaS){
+    if(pizza_sizeL === 'large'){
         totalL += 98.99
     } 
 
 }
 function totals(){
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                     
 
 }
     return{
@@ -44,7 +49,8 @@ function totals(){
         addM,
         addL,
         getSmall,
-        totals
+        totals,
+        grandTotal
 
 
     }

@@ -22,8 +22,11 @@ const pizza = pizza_app()
 let counter = 0;
 
 app.get('/', function(req, res) {
+	const totalS= pizza.getSmall()
+	const grandT = pizza.grandTotal()
+
 	res.render('index', {
-		
+		totalS,grandT
 	});
 });
 
@@ -37,14 +40,12 @@ app.post('/small', function(req, res) {
 	// })
 	// console.log(pizzaS)
 	var small = req.body.small
-	const pizzaS = pizza.addS({
-		pizza_small : small
-	})
+	console.log(small+ "hello")
+	 pizza.addS(small)
+    
+	res.redirect('/')
 	
-	res.render('index', {
-		pizzaS
-		
-	})
+	
 });
 
 app.post('/medium', function(req, res) {
