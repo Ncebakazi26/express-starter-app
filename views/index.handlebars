@@ -1,15 +1,110 @@
-<h1>Counter Index</h1>
+{{!-- <h1>Counter Index</h1> --}}
+
+<body>
+  <div>
+    <div class="header">
+      <h1>Pizza Place</h1>
+    </div>
+
+    <div class="cartTotal ">
+      <strong>Total price</strong>
+      <span class="cartTotalPrice">0.00</span>
+      <a href="#">
+        <img src="shopping-cart.png" alt="">
+      </a>
+    </div>
+
+
+    <div class="cart">
+      <h3>Shopping Cart</h3>
+      <img src="shopping-cart.png" alt="">
+      {{!-- <strong>Small pizzas quantity:</strong>
+      <span class="smallTotalPrice"> {{qty}}</span> --}}
+      <strong>Small pizzas total:</strong>
+      <span class="smallTotalPrice"> {{pizzaS}}</span>
+
+      <br>
+      <strong>Medium pizzas total:</strong>
+      <span class="mediumTotalPrice">0.00</span>
+      <br>
+      <strong>Large pizza total:</strong>
+
+      <span class="largeTotalPrice">0.00</span>
+      <br>
+      <strong>Total price</strong>
+      <span class="totalPrice">0.00</span>
+    </div>
+
+    <div class="pizzas">
+      <form action="/small" method="POST">
+        <div class="pizza small">
+          <div class="info">
+            <img src="pizza.png" alt="">
+            <h2>Small Pizza</h2>
+             <strong>31.99</strong>
+
+          </div>
+          <div class="orderBox">
+            <button class="btn orderSmallPizza" name="small" type="submit" style="margin-left: auto">Order small
+              pizza</button>
+          </div>
+        </div>
+      </form>
+      <form action="/medium" method="POST">
+        <div class="pizza medium">
+          <div class="info">
+            <img src="pizza.png" alt="">
+            <h2>Medium Pizza</h2>
+            <strong>R76.99</strong>
+
+          </div>
+
+          <div class="orderBox">
+            <button class="btn orderMediumPizza"  name="medium" type="submit" style="margin-left: auto">Order medium
+              pizza</button>
+          </div>
+
+        </div>
+      </form>
+      <form action="/large" method="POST">
+        <div class="pizza large">
+          <div class="info">
+            <img src="pizza.png" alt="">
+            <h2>Large Pizza</h2>
+            <strong>98.99</strong>
+          </div>
+          <div class="orderBox">
+            <button class="btn orderLargePizza" name="large" type="submit" style="margin-left: auto">Order large
+              pizza</button>
+          </div>
+        </div>
+      </form>
+
+    </div>
+
+  </div>
+</body>
+
+
+<hr>
 
 
 <div>
-    Start here
 
-    <form action="/count" method="post">
-        <div class="counter" >
-            {{counter}}
-        </div>    
-        <input type="submit" value="Press button to count">
-    
+
+  <div>
+    <h1>Pizza Perfect</h1>
+    <form action="/" method="POST">
+      <button>Small</button>
+      <button class="btn" type="submit">Add</button>
     </form>
 
-</div>
+    <form action="/" method="POST">
+      <button>Medium</button>
+    </form>
+
+    <form action="/" method="POST">
+      <button>Large</button>
+    </form>
+
+  </div>
