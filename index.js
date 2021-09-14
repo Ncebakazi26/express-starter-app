@@ -19,26 +19,35 @@ app.set('view engine', 'handlebars');
 
 const pizza = pizza_app()
 
-let counter = 0;
+let counterS = 0;
+let counterM = 0;
+let counterL = 0;
+
+let qty = 0
 
 app.get('/', function(req, res) {
 	const totalS = pizza.getSmall()
 	const totalM = pizza.getMedium()
 	const totalL = pizza.getLarge()
 	const grandT = pizza.grandTotal()
-
+   const qtyS = counterS ++;
+   const qtyM = counterM++;
+   const qtyL = counterL++;
 	res.render('index', {
 		totalS,
 		totalM,
 		totalL,
-		grandT
+		grandT,
+		// qtyS,
+		// qtyM,
+   		// qtyL
 	});
 });
 
 app.post('/small', function(req, res) {
 	var small = req.body.small
 	 pizza.addS(small)
-    
+	const qty = ++counterS;
 	res.redirect('/')	
 });
 
@@ -55,7 +64,19 @@ app.post('/large', function(req, res) {
 	res.redirect('/')
 
 });
+// app.get('/add', function(req,res){
+// })
+// app.get('/subract', function(req,res){
+// 	pizza.subract()
 
+// 	res.redirect('/')
+
+// })
+app.get('/order', function(req,res){
+	var  order=pizza.pizza_order()
+	res.render('order',{order})
+	//console.log(order)
+})
 
 // start  the server and start listening for HTTP request on the PORT number specified...
 app.listen(PORT, function() {
